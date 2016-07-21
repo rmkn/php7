@@ -1,5 +1,6 @@
 FROM centos:6
 MAINTAINER rmkn
+RUN cp -p /usr/share/zoneinfo/Japan /etc/localtime && echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock
 RUN yum -y update
 RUN yum -y install epel-release
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
