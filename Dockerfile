@@ -9,6 +9,8 @@ RUN yum -y install --enablerepo=remi,remi-php70 httpd php70-php php70-php-mbstri
 COPY security.sh /tmp/security.sh
 RUN /tmp/security.sh && rm /tmp/security.sh
 
+RUN sed -i -e 's/;date.timezone =/date.timezone = Asia\/Tokyo/' /etc/opt/remi/php70/php.ini
+
 EXPOSE 80
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
