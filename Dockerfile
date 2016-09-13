@@ -1,6 +1,6 @@
 FROM centos:6
 MAINTAINER rmkn
-RUN sed -i -e "s/en_US.UTF-8/ja_JP.UTF-8" /etc/sysconfig/i18n
+RUN sed -i -e "s/en_US.UTF-8/ja_JP.UTF-8/" /etc/sysconfig/i18n
 RUN cp -p /usr/share/zoneinfo/Japan /etc/localtime && echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock
 RUN yum -y update
 RUN yum -y install epel-release
