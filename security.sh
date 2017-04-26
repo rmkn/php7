@@ -15,5 +15,5 @@ RequestHeader unset Proxy
 Header always set X-XSS-Protection "1; mode=block"
 Header always set X-Frame-Options SAMEORIGIN
 Header always set X-Content-Type-Options nosniff
-Header always set Content-Security-Policy "default-src 'self'"
+#Header always set Content-Security-Policy "default-src 'self'"
 EOT
